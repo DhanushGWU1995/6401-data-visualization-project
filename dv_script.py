@@ -33,15 +33,23 @@ for file_path in files:
 # Combine all
 combined_df = pd.concat(all_data, ignore_index=True)
 
-# Convert observation_date to Date (keep full date, no time)
-combined_df['Date'] = pd.to_datetime(combined_df['observation_date']).dt.date
+# Convert observation_date to Date
+combined_df['Date'] = pd.to_datetime(combined_df['observation_date'])
 
 # Find all CGMD columns and combine them into one Unemployment_Rate column
 cgmd_columns = [col for col in combined_df.columns if col.startswith('CGMD')]
 combined_df['Unemployment_Rate'] = combined_df[cgmd_columns].bfill(axis=1).iloc[:, 0]
 
+# Extract Month, Day, and Year from Date
+combined_df['Month'] = combined_df['Date'].dt.month
+combined_df['Day'] = combined_df['Date'].dt.day
+combined_df['Year'] = combined_df['Date'].dt.year
+
+# Convert Date to date only (no time)
+combined_df['Date'] = combined_df['Date'].dt.date
+
 # Keep only the relevant columns
-combined_df = combined_df[['Date', 'Unemployment_Rate', 'Age_Group']]
+combined_df = combined_df[['Date', 'Month', 'Day', 'Year', 'Unemployment_Rate', 'Age_Group']]
 
 # Remove rows with NaN unemployment rate
 combined_df = combined_df.dropna(subset=['Unemployment_Rate'])
@@ -50,17 +58,17 @@ combined_df = combined_df.dropna(subset=['Unemployment_Rate'])
 # Process Job Postings Files
 # ---------------------------
 job_posting_files = {
-    "data/Electrical Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Electrical Job Postings USA",
-    "data/Industrial Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Industrial Job Postings USA",
-    "data/Software Development Job Postings on Indeed in the United States_2020_2026.xlsx": "Software Job Postings USA",
-    "data/Nursing Job Postings on Indeed in the United States_2020_2026.xlsx": "Nursing Job Postings USA",
-    "data/Marketing Job Postings on Indeed in the United States_2020_2026.xlsx": "Marketing Job Postings USA",
-    "data/Banking and Finance Job Postings on Indeed in the United States_2020_2026.xlsx": "Banking Job Postings USA"
+    "data/Electrical Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Electrical Engineering",
+    "data/Industrial Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Industrial Engineering",
+    "data/Software Development Job Postings on Indeed in the United States_2020_2026.xlsx": "Software Development",
+    "data/Nursing Job Postings on Indeed in the United States_2020_2026.xlsx": "Nursing",
+    "data/Marketing Job Postings on Indeed in the United States_2020_2026.xlsx": "Marketing",
+    "data/Banking and Finance Job Postings on Indeed in the United States_2020_2026.xlsx": "Banking and Finance"
 }
 
-job_posting_dfs = {}
+all_job_postings = []
 
-for file_path, sheet_name in job_posting_files.items():
+for file_path, domain_name in job_posting_files.items():
     # Read the second sheet (Daily, 7-Day)
     df = pd.read_excel(file_path, sheet_name=1, header=0)
     
@@ -77,43 +85,48 @@ for file_path, sheet_name in job_posting_files.items():
     # Remove rows with NaN values
     df = df.dropna()
     
-    # Convert Date to datetime (date only, no time)
-    df['Date'] = pd.to_datetime(df['Date']).dt.date
+    # Convert Date to datetime
+    df['Date'] = pd.to_datetime(df['Date'])
     
-    # Store in dictionary
-    job_posting_dfs[sheet_name] = df
+    # Add Domain column
+    df['Domain'] = domain_name
+    
+    # Append to list
+    all_job_postings.append(df)
+
+# Combine all job postings into one dataframe
+combined_job_postings = pd.concat(all_job_postings, ignore_index=True)
+
+# Extract Month, Day, and Year from Date
+combined_job_postings['Month'] = combined_job_postings['Date'].dt.month
+combined_job_postings['Day'] = combined_job_postings['Date'].dt.day
+combined_job_postings['Year'] = combined_job_postings['Date'].dt.year
+
+# Convert Date to date only (no time)
+combined_job_postings['Date'] = combined_job_postings['Date'].dt.date
+
+# Reorder columns to have Month, Day, and Year after Date
+combined_job_postings = combined_job_postings[['Date', 'Month', 'Day', 'Year', 'Domain', 'Value']]
 
 # ---------------------------
-# Save all sheets to Excel
+# Save to CSV files
 # ---------------------------
-output_file = "Combined_Masters_Unemployment_By_Age.xlsx"
-with pd.ExcelWriter(output_file, engine='openpyxl', date_format='YYYY-MM-DD', datetime_format='YYYY-MM-DD') as writer:
-    combined_df.to_excel(writer, sheet_name='Unemployment Rate USA', index=False)
-    
-    # Write all job posting sheets
-    for sheet_name, df in job_posting_dfs.items():
-        df.to_excel(writer, sheet_name=sheet_name, index=False)
-    
-    # Auto-adjust column widths for all sheets
-    for sheet_name in writer.sheets:
-        worksheet = writer.sheets[sheet_name]
-        for column in worksheet.columns:
-            max_length = 0
-            column_letter = column[0].column_letter
-            for cell in column:
-                try:
-                    if len(str(cell.value)) > max_length:
-                        max_length = len(str(cell.value))
-                except:
-                    pass
-            adjusted_width = max_length + 2
-            worksheet.column_dimensions[column_letter].width = adjusted_width
+unemployment_output = "Unemployment_Rate_USA.csv"
+job_postings_output = "Job_Postings_USA.csv"
 
-print("Combined file created:")
-print(output_file)
+# Save Unemployment Rate data
+combined_df.to_csv(unemployment_output, index=False)
+
+# Save Job Postings data
+combined_job_postings.to_csv(job_postings_output, index=False)
+
+print("CSV files created:")
+print(f"1. {unemployment_output}")
+print(f"2. {job_postings_output}")
 print("\nUnemployment Rate USA - First 5 rows:")
 print(combined_df.head())
-print("\nJob Posting Sheets Created:")
-for sheet_name, df in job_posting_dfs.items():
-    print(f"\n{sheet_name} - First 5 rows:")
-    print(df.head())
+print(f"\nJob Postings USA - Total rows: {len(combined_job_postings)}")
+print("First 10 rows:")
+print(combined_job_postings.head(10))
+print("\nDomains included:")
+print(combined_job_postings['Domain'].unique())
