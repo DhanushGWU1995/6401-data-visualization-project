@@ -1,6 +1,8 @@
 
 # 6401-data-visualization-project
+
 Team Name: Data Wizards
+Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 
 ## Project Discussions & Team Notes
