@@ -3,11 +3,11 @@ import os
 
 # Files you uploaded
 files = [
-    "data/Unemployment Rate - College Graduates - Master's Degree, 20 to 24 years.xlsx",
-    "data/Unemployment Rate - College Graduates - Master's Degree, 25 to 34 years.xlsx",
-    "data/Unemployment Rate - College Graduates - Master's Degree, 35 to 44 years.xlsx",
-    "data/Unemployment Rate - College Graduates - Master's Degree, 45 to 54 years.xlsx",
-    "data/Unemployment Rate - College Graduates - Master's Degree, 55 to 64 years .xlsx"
+    "input_data/Unemployment Rate - College Graduates - Master's Degree, 20 to 24 years.xlsx",
+    "input_data/Unemployment Rate - College Graduates - Master's Degree, 25 to 34 years.xlsx",
+    "input_data/Unemployment Rate - College Graduates - Master's Degree, 35 to 44 years.xlsx",
+    "input_data/Unemployment Rate - College Graduates - Master's Degree, 45 to 54 years.xlsx",
+    "input_data/Unemployment Rate - College Graduates - Master's Degree, 55 to 64 years .xlsx"
 ]
 
 all_data = []
@@ -58,12 +58,12 @@ combined_df = combined_df.dropna(subset=['Unemployment_Rate'])
 # Process Job Postings Files
 # ---------------------------
 job_posting_files = {
-    "data/Electrical Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Electrical Engineering",
-    "data/Industrial Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Industrial Engineering",
-    "data/Software Development Job Postings on Indeed in the United States_2020_2026.xlsx": "Software Development",
-    "data/Nursing Job Postings on Indeed in the United States_2020_2026.xlsx": "Nursing",
-    "data/Marketing Job Postings on Indeed in the United States_2020_2026.xlsx": "Marketing",
-    "data/Banking and Finance Job Postings on Indeed in the United States_2020_2026.xlsx": "Banking and Finance"
+    "input_data/Electrical Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Electrical Engineering",
+    "input_data/Industrial Engineering Job Postings on Indeed in the United States_2020_2026.xlsx": "Industrial Engineering",
+    "input_data/Software Development Job Postings on Indeed in the United States_2020_2026.xlsx": "Software Development",
+    "input_data/Nursing Job Postings on Indeed in the United States_2020_2026.xlsx": "Nursing",
+    "input_data/Marketing Job Postings on Indeed in the United States_2020_2026.xlsx": "Marketing",
+    "input_data/Banking and Finance Job Postings on Indeed in the United States_2020_2026.xlsx": "Banking and Finance"
 }
 
 all_job_postings = []
@@ -111,8 +111,11 @@ combined_job_postings = combined_job_postings[['Date', 'Month', 'Day', 'Year', '
 # ---------------------------
 # Save to CSV files
 # ---------------------------
-unemployment_output = "Unemployment_Rate_USA.csv"
-job_postings_output = "Job_Postings_USA.csv"
+# Create output_data directory if it doesn't exist
+os.makedirs('output_data', exist_ok=True)
+
+unemployment_output = "output_data/Unemployment_Rate_USA.csv"
+job_postings_output = "output_data/Job_Postings_USA.csv"
 
 # Save Unemployment Rate data
 combined_df.to_csv(unemployment_output, index=False)
