@@ -12,21 +12,9 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 ## Data Sources
 
-### U.S. Bureau of Labor Statistics (BLS)
-- [BLS Main Site](https://www.bls.gov/) — Official labor market and economic data
-- [BLS Public Data API for Developers](https://www.bls.gov/developers/home.htm)
+### US Unemployment Rate - Kaggle Dataset
+- [Unemployment in USA ](https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state) — US labor market and economic data
 
-### FRED Job Postings Series
-- [Software Development](https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE)
-- [Banking and Finance](https://fred.stlouisfed.org/series/IHLIDXUSTPBAFI)
-- [Electrical Engineering](https://fred.stlouisfed.org/series/IHLIDXUSTPELECENGI)
-- [Nursing](https://fred.stlouisfed.org/series/IHLIDXUSTPNURS)
-- [Marketing](https://fred.stlouisfed.org/series/IHLIDXUSTPMARK)
-- [Industrial Engineering](https://fred.stlouisfed.org/series/IHLIDXUSTPINDUENGI)
+### Indeed USA Job Postings Series
+- [Software Development](https://data.indeed.com/#/postings)
 
-### FRED Unemployment Rate by Age Group
-- [20 to 24 years](https://fred.stlouisfed.org/series/CGMD2024)
-- [25 to 34 years](https://fred.stlouisfed.org/series/CGMD2534)
-- [35 to 44 years](https://fred.stlouisfed.org/series/CGMD3544)
-- [45 to 54 years](https://fred.stlouisfed.org/series/CGMD4554)
-- [55 to 64 years](https://fred.stlouisfed.org/series/CGMD5564)
