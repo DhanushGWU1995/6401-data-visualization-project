@@ -18,3 +18,11 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 ### Indeed USA Job Postings Series
 - [Software Development](https://data.indeed.com/#/postings)
 
+
+### FRED Job posting US : U.S. Bureau of Labor Statistics via FRED
+
+https://fred.stlouisfed.org/series/JTU5100JOL
+https://fred.stlouisfed.org/series/JTS540099JOL
+https://fred.stlouisfed.org/series/JTU5200JOL#
+https://fred.stlouisfed.org/series/JTS3000JOL
+https://fred.stlouisfed.org/series/JTSJOL
