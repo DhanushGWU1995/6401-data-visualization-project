@@ -23,3 +23,6 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 ### 2017-2025 Total Job Openings
 - [Total Job Openings (Not Farm)] https://fred.stlouisfed.org/series/JTSJOL
+
+### All JOLTS Data:
+- [JOLTS] https://www.bls.gov/jlt/
