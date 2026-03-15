@@ -32,16 +32,17 @@
         </named-connections>
         <relation connection='textscan.08v43b50ok7i9415zl9750my9ewh' name='Unemp_vs_job_usa_final.csv' table='[Unemp_vs_job_usa_final#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='date' name='Date' ordinal='0' />
-            <column datatype='integer' name='year' ordinal='1' />
-            <column datatype='integer' name='month' ordinal='2' />
-            <column datatype='string' name='sectorName' ordinal='3' />
-            <column datatype='string' name='State/Area' ordinal='4' />
-            <column datatype='integer' name='Total Civilian Labor Force in State/Area' ordinal='5' />
-            <column datatype='integer' name='Total Employment in State/Area' ordinal='6' />
-            <column datatype='integer' name='Total Unemployment in State/Area' ordinal='7' />
-            <column datatype='real' name='Percent (%) of Labor Force Unemployed in State/Area' ordinal='8' />
-            <column datatype='real' name='job_posting_index' ordinal='9' />
+            <column datatype='real' name='percent_difference' ordinal='0' />
+            <column datatype='date' name='Date' ordinal='1' />
+            <column datatype='integer' name='year' ordinal='2' />
+            <column datatype='integer' name='month' ordinal='3' />
+            <column datatype='string' name='sectorName' ordinal='4' />
+            <column datatype='string' name='State/Area' ordinal='5' />
+            <column datatype='integer' name='Total Civilian Labor Force in State/Area' ordinal='6' />
+            <column datatype='integer' name='Total Employment in State/Area' ordinal='7' />
+            <column datatype='integer' name='Total Unemployment in State/Area' ordinal='8' />
+            <column datatype='real' name='Percent (%) of Labor Force Unemployed in State/Area' ordinal='9' />
+            <column datatype='real' name='job_posting_index' ordinal='10' />
           </columns>
         </relation>
         <metadata-records>
@@ -62,12 +63,24 @@
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
+            <remote-name>percent_difference</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[percent_difference]</local-name>
+            <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
+            <remote-alias>percent_difference</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[Unemp_vs_job_usa_final.csv_42A0AC64F8A1405299116A9672FA8919]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
             <remote-name>Date</remote-name>
             <remote-type>133</remote-type>
             <local-name>[Date]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>Date</remote-alias>
-            <ordinal>0</ordinal>
+            <ordinal>1</ordinal>
             <local-type>date</local-type>
             <aggregation>Year</aggregation>
             <contains-null>true</contains-null>
@@ -79,7 +92,7 @@
             <local-name>[year]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>year</remote-alias>
-            <ordinal>1</ordinal>
+            <ordinal>2</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -91,7 +104,7 @@
             <local-name>[month]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>month</remote-alias>
-            <ordinal>2</ordinal>
+            <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -103,7 +116,7 @@
             <local-name>[sectorName]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>sectorName</remote-alias>
-            <ordinal>3</ordinal>
+            <ordinal>4</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -118,7 +131,7 @@
             <local-name>[State/Area]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>State/Area</remote-alias>
-            <ordinal>4</ordinal>
+            <ordinal>5</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
             <scale>1</scale>
@@ -133,7 +146,7 @@
             <local-name>[Total Civilian Labor Force in State/Area]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>Total Civilian Labor Force in State/Area</remote-alias>
-            <ordinal>5</ordinal>
+            <ordinal>6</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -145,7 +158,7 @@
             <local-name>[Total Employment in State/Area]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>Total Employment in State/Area</remote-alias>
-            <ordinal>6</ordinal>
+            <ordinal>7</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -157,7 +170,7 @@
             <local-name>[Total Unemployment in State/Area]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>Total Unemployment in State/Area</remote-alias>
-            <ordinal>7</ordinal>
+            <ordinal>8</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -169,7 +182,7 @@
             <local-name>[Percent (%) of Labor Force Unemployed in State/Area]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>Percent (%) of Labor Force Unemployed in State/Area</remote-alias>
-            <ordinal>8</ordinal>
+            <ordinal>9</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -181,7 +194,7 @@
             <local-name>[job_posting_index]</local-name>
             <parent-name>[Unemp_vs_job_usa_final.csv]</parent-name>
             <remote-alias>job_posting_index</remote-alias>
-            <ordinal>9</ordinal>
+            <ordinal>10</ordinal>
             <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
@@ -418,16 +431,17 @@
             <properties context=''>
               <relation connection='textscan.08v43b50ok7i9415zl9750my9ewh' name='Unemp_vs_job_usa_final.csv' table='[Unemp_vs_job_usa_final#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='date' name='Date' ordinal='0' />
-                  <column datatype='integer' name='year' ordinal='1' />
-                  <column datatype='integer' name='month' ordinal='2' />
-                  <column datatype='string' name='sectorName' ordinal='3' />
-                  <column datatype='string' name='State/Area' ordinal='4' />
-                  <column datatype='integer' name='Total Civilian Labor Force in State/Area' ordinal='5' />
-                  <column datatype='integer' name='Total Employment in State/Area' ordinal='6' />
-                  <column datatype='integer' name='Total Unemployment in State/Area' ordinal='7' />
-                  <column datatype='real' name='Percent (%) of Labor Force Unemployed in State/Area' ordinal='8' />
-                  <column datatype='real' name='job_posting_index' ordinal='9' />
+                  <column datatype='real' name='percent_difference' ordinal='0' />
+                  <column datatype='date' name='Date' ordinal='1' />
+                  <column datatype='integer' name='year' ordinal='2' />
+                  <column datatype='integer' name='month' ordinal='3' />
+                  <column datatype='string' name='sectorName' ordinal='4' />
+                  <column datatype='string' name='State/Area' ordinal='5' />
+                  <column datatype='integer' name='Total Civilian Labor Force in State/Area' ordinal='6' />
+                  <column datatype='integer' name='Total Employment in State/Area' ordinal='7' />
+                  <column datatype='integer' name='Total Unemployment in State/Area' ordinal='8' />
+                  <column datatype='real' name='Percent (%) of Labor Force Unemployed in State/Area' ordinal='9' />
+                  <column datatype='real' name='job_posting_index' ordinal='10' />
                 </columns>
               </relation>
             </properties>
@@ -469,8 +483,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Longitude (generated)]' field-type='quantitative' max='32625615.419546187' min='18597873.154539175' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Latitude (generated)]' field-type='quantitative' max='12123625.697308484' min='1284703.4651810387' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Longitude (generated)]' field-type='quantitative' max='33614258.27965828' min='18458730.826078955' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Latitude (generated)]' field-type='quantitative' max='14937611.191329297' min='-906803.21680193814' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' type='custom-interpolated'>
@@ -520,6 +534,78 @@
         </pages>
       </table>
       <simple-id uuid='{F1C79D5E-5B0E-4BA4-8D77-89E58ED6EC45}' />
+    </worksheet>
+    <worksheet name='Geographic Distribution of Unemployment Percent Change'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Percent Difference By State Map</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unemp_vs_job_usa_final' name='federated.1047sen0vi1j5y166j08h0iqvnjd' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1047sen0vi1j5y166j08h0iqvnjd'>
+            <column caption='State/Area1' datatype='string' name='[State/Area]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[percent_difference]' derivation='Avg' name='[avg:percent_difference:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State/Area]' derivation='None' name='[none:State/Area:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[percent_difference]' role='measure' type='quantitative' />
+            <column-instance column='[percent_difference]' derivation='Sum' name='[sum:percent_difference:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]' included-values='in-range'>
+            <min>2000</min>
+            <max>2025</max>
+          </filter>
+          <slices>
+            <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Longitude (generated)]' field-type='quantitative' max='33614258.27965828' min='18458730.826078955' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Latitude (generated)]' field-type='quantitative' max='14937611.191329297' min='-906803.21680193814' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[sum:percent_difference:qk]' />
+              <text column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:percent_difference:qk]' />
+              <lod column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]' />
+              <geometry column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[Geometry (generated)]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1047sen0vi1j5y166j08h0iqvnjd].[Latitude (generated)]</rows>
+        <cols>[federated.1047sen0vi1j5y166j08h0iqvnjd].[Longitude (generated)]</cols>
+        <pages>
+          <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:ok]</column>
+        </pages>
+      </table>
+      <simple-id uuid='{993BD322-0E5E-4AC2-BDD0-FF555FA92571}' />
     </worksheet>
     <worksheet name='Job Openings over Years'>
       <table>
@@ -581,7 +667,7 @@
             <format attr='stroke-color' id='refline3' value='#e15759' />
             <format attr='stroke-color' id='refline4' value='#e15759' />
             <format attr='stroke-color' id='refline1' value='#e15759' />
-            <format attr='stroke-color' id='refline2' value='#e15759e7' />
+            <format attr='stroke-color' id='refline2' value='#000000e7' />
           </style-rule>
         </style>
         <panes>
@@ -656,7 +742,7 @@
             <format attr='stroke-color' id='refline2' value='#e15759' />
             <format attr='stroke-color' id='refline3' value='#e15759' />
             <format attr='stroke-color' id='refline0' value='#e15759' />
-            <format attr='stroke-color' id='refline1' value='#e15759' />
+            <format attr='stroke-color' id='refline1' value='#000000' />
           </style-rule>
         </style>
         <panes>
@@ -750,7 +836,7 @@
             <format attr='stroke-color' id='refline3' value='#e15759' />
             <format attr='stroke-color' id='refline4' value='#e15759' />
             <format attr='stroke-color' id='refline1' value='#e15759' />
-            <format attr='stroke-color' id='refline2' value='#e15759d3' />
+            <format attr='stroke-color' id='refline2' value='#000000d3' />
           </style-rule>
         </style>
         <panes>
@@ -775,6 +861,59 @@
         <cols>[federated.1047sen0vi1j5y166j08h0iqvnjd].[tmn:Date:qk]</cols>
       </table>
       <simple-id uuid='{1F581277-30E5-445A-93F6-A15D77FB5425}' />
+    </worksheet>
+    <worksheet name='Percent Difference By State'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Average Unemployment Percentage By State</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unemp_vs_job_usa_final' name='federated.1047sen0vi1j5y166j08h0iqvnjd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1047sen0vi1j5y166j08h0iqvnjd'>
+            <column caption='State/Area1' datatype='string' name='[State/Area]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[percent_difference]' derivation='Avg' name='[avg:percent_difference:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[State/Area]' derivation='None' name='[none:State/Area:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column datatype='real' name='[percent_difference]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <computed-sort column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]' direction='DESC' using='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:percent_difference:qk]' />
+          <filter class='quantitative' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]' included-values='in-range'>
+            <min>2000</min>
+            <max>2025</max>
+          </filter>
+          <slices>
+            <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[:Measure Names]</column>
+            <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:percent_difference:qk]</rows>
+        <cols>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]</cols>
+        <pages>
+          <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:ok]</column>
+        </pages>
+      </table>
+      <simple-id uuid='{709930E6-9F48-490D-A937-91B655592A83}' />
     </worksheet>
     <worksheet name='Tech Job Posting vs Percent Unemployment in US'>
       <layout-options>
@@ -890,7 +1029,7 @@
       </table>
       <simple-id uuid='{6FC6D5AE-FFF4-4518-9265-B47DC69A04D9}' />
     </worksheet>
-    <worksheet name='Unemployment by State (2)'>
+    <worksheet name='Unemployment by State Clean Channels'>
       <layout-options>
         <title>
           <formatted-text>
@@ -908,14 +1047,21 @@
             <column caption='State/Area1' datatype='string' name='[State/Area]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
             <column-instance column='[Percent (%) of Labor Force Unemployed in State/Area]' derivation='Avg' name='[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' pivot='key' type='quantitative' />
             <column-instance column='[State/Area]' derivation='None' name='[none:State/Area:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Percent (%) of Labor Force Unemployed in State/Area]' derivation='Sum' name='[sum:Percent (%) of Labor Force Unemployed in State/Area:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[year]' derivation='None' name='[none:year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[:Measure Names]'>
             <groupfilter function='level-members' level='[:Measure Names]' />
           </filter>
-          <computed-sort column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]' direction='ASC' using='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' />
+          <computed-sort column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]' direction='DESC' using='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' />
+          <filter class='quantitative' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]' included-values='in-range'>
+            <min>2000</min>
+            <max>2025</max>
+          </filter>
           <slices>
             <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[:Measure Names]</column>
+            <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -929,7 +1075,10 @@
           </pane>
         </panes>
         <rows>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:State/Area:nk]</rows>
-        <cols>[federated.1047sen0vi1j5y166j08h0iqvnjd].[sum:Percent (%) of Labor Force Unemployed in State/Area:qk]</cols>
+        <cols>[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]</cols>
+        <pages>
+          <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:ok]</column>
+        </pages>
       </table>
       <simple-id uuid='{242070D7-FBAC-40F5-8156-3E256194C0AE}' />
     </worksheet>
@@ -949,6 +1098,7 @@
             <column-instance column='[Date]' derivation='Month-Trunc' name='[tmn:Date:qk]' pivot='key' type='quantitative' />
             <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
           </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' included-values='non-null' />
           <filter class='categorical' column='[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:sectorName:nk]'>
             <groupfilter function='member' level='[none:sectorName:nk]' member='&quot;Non-Farm Sectors&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
@@ -959,6 +1109,7 @@
           <slices>
             <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:year:qk]</column>
             <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[none:sectorName:nk]</column>
+            <column>[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -996,7 +1147,7 @@
             <format attr='stroke-color' id='refline3' value='#e15759' />
             <format attr='stroke-color' id='refline4' value='#e15759' />
             <format attr='stroke-color' id='refline1' value='#e15759' />
-            <format attr='stroke-color' id='refline2' value='#e15759e7' />
+            <format attr='stroke-color' id='refline2' value='#000000e7' />
           </style-rule>
         </style>
         <panes>
@@ -1091,7 +1242,7 @@
             <format attr='stroke-color' id='refline3' value='#e15759' />
             <format attr='stroke-color' id='refline4' value='#e15759' />
             <format attr='stroke-color' id='refline1' value='#e15759' />
-            <format attr='stroke-color' id='refline2' value='#e15759e7' />
+            <format attr='stroke-color' id='refline2' value='#000000' />
           </style-rule>
         </style>
         <panes>
@@ -1149,6 +1300,246 @@
     </worksheet>
   </worksheets>
   <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Average Unemployment by State Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='8' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='6' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Unemployment by State Clean Channels' w='41200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='98000' id='5' name='Geographic Distribution of Unemployment' w='41200' x='42000' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='8125' id='9' name='Geographic Distribution of Unemployment' pane-specification-id='0' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{0B9910BA-5E36-49FD-A62A-B8DCAF045A9B}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='State Area Unemployment'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='8' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='6' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Unemployment by State Clean Channels' w='41200' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='98000' id='5' name='Geographic Distribution of Unemployment' w='41200' x='42000' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='7' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='8125' id='9' name='Geographic Distribution of Unemployment' pane-specification-id='0' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[avg:Percent (%) of Labor Force Unemployed in State/Area:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone count='1' h='13750' id='10' name='Geographic Distribution of Unemployment' name1='Unemployment by State Clean Channels' synchronized='1' type-v2='currpage' w='16000' x='83200' y='9125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{0F2C1CF5-2FFB-424C-930E-3A8C291FE5D0}' />
+    </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='State Unemployment'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='49000' id='3' name='Geographic Distribution of Unemployment Percent Change' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' param='vert' type-v2='layout-flow' w='82400' x='800' y='50000'>
+                <zone h='49000' id='10' name='Percent Difference By State' w='82400' x='800' y='50000'>
+                  <layout-cache minheight='283' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='8125' id='8' name='Geographic Distribution of Unemployment Percent Change' pane-specification-id='0' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[sum:percent_difference:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone count='1' h='13750' id='9' name='Geographic Distribution of Unemployment Percent Change' name1='Percent Difference By State' synchronized='1' type-v2='currpage' w='16000' x='83200' y='9125'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97866' id='12' param='vert' type-v2='layout-flow' w='95734' x='2133' y='1067'>
+                <zone fixed-size='280' h='38400' id='3' is-fixed='true' name='Geographic Distribution of Unemployment Percent Change' w='95734' x='2133' y='1067'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8667' id='8' name='Geographic Distribution of Unemployment Percent Change' pane-specification-id='0' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[sum:percent_difference:qk]' type-v2='color' w='95734' x='2133' y='39467'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='38400' id='10' is-fixed='true' name='Percent Difference By State' w='95734' x='2133' y='48134'>
+                  <layout-cache minheight='283' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12399' id='9' name='Geographic Distribution of Unemployment Percent Change' synchronized='1' type-v2='currpage' w='95734' x='2133' y='86534'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A400703C-3FFD-4426-ABD1-64D7771EC138}' />
+    </dashboard>
     <dashboard enable-sort-zone-taborder='true' name='U.S. Labor Market Analysis: Unemployment and Job Demand Trends (2020–2025)'>
       <style />
       <size maxheight='1100' maxwidth='1000' minheight='1100' minwidth='1000' preset-index='1' sizing-mode='fixed' />
@@ -1366,12 +1757,66 @@
       </devicelayouts>
       <simple-id uuid='{44A3F4F8-D043-4243-B443-7927F5EC3EA7}' />
     </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Unemployment to Job Opening Comparison'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone fixed-size='492' h='98000' id='5' is-fixed='true' type-v2='layout-basic' w='98400' x='800' y='1000'>
+              <zone h='49000' id='3' name='Job Openings over Years' w='98400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' param='vert' type-v2='layout-flow' w='98400' x='800' y='50000'>
+                <zone h='49000' id='10' name='Unemployment over Years' w='98400' x='800' y='50000'>
+                  <layout-cache minheight='198' minwidth='152' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A28D299A-1C48-4F6B-AE6B-BF30224C9072}' />
+    </dashboard>
   </dashboards>
   <windows source-height='30'>
     <window class='worksheet' name='National Unemployment Trend Over Time'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -1389,7 +1834,7 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='160'>
+          <strip size='261'>
             <card pane-specification-id='7' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[:Measure Names]' type='color' />
           </strip>
         </edge>
@@ -1432,7 +1877,7 @@
       </viewpoint>
       <simple-id uuid='{1994505B-833A-408F-B022-E6040CA44A5E}' />
     </window>
-    <window class='worksheet' name='Unemployment by State (2)'>
+    <window class='worksheet' name='Unemployment by State Clean Channels'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1452,11 +1897,16 @@
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+          </strip>
+        </edge>
       </cards>
       <viewpoint>
         <current-page>
           <multibucket>
-            <bucket>2025</bucket>
+            <bucket>2012</bucket>
           </multibucket>
         </current-page>
       </viewpoint>
@@ -1497,6 +1947,77 @@
         </current-page>
       </viewpoint>
       <simple-id uuid='{DD6757EB-1F18-4B39-B61C-64BF6B2514B4}' />
+    </window>
+    <window class='worksheet' name='Geographic Distribution of Unemployment Percent Change'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+            <card pane-specification-id='0' param='[federated.1047sen0vi1j5y166j08h0iqvnjd].[sum:percent_difference:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2025</bucket>
+          </multibucket>
+        </current-page>
+      </viewpoint>
+      <simple-id uuid='{A760B8F8-0869-4E28-82CB-642B8350A679}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Percent Difference By State'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2025</bucket>
+          </multibucket>
+        </current-page>
+      </viewpoint>
+      <simple-id uuid='{C7355E03-5027-4F2F-B9A8-4F32D8A90762}' />
     </window>
     <window class='worksheet' name='Overall Job Index Trend Over Time'>
       <cards>
@@ -1636,7 +2157,7 @@
       <active id='-1' />
       <simple-id uuid='{881C0DA7-CBB7-473A-8039-50502157F909}' />
     </window>
-    <window class='worksheet' maximized='true' name='Tech Job Posting vs Percent Unemployment in US'>
+    <window class='worksheet' name='Tech Job Posting vs Percent Unemployment in US'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1659,6 +2180,82 @@
         </edge>
       </cards>
       <simple-id uuid='{64315E82-F6C5-405E-95CF-D696D52B7E62}' />
+    </window>
+    <window class='dashboard' name='Average Unemployment by State Dashboard'>
+      <viewpoints>
+        <viewpoint name='Geographic Distribution of Unemployment'>
+          <current-page>
+            <multibucket>
+              <bucket>2025</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Unemployment by State Clean Channels'>
+          <current-page>
+            <multibucket>
+              <bucket>2025</bucket>
+            </multibucket>
+          </current-page>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5A7BB127-83C6-41D1-96E2-707FA174ECCA}' />
+    </window>
+    <window class='dashboard' name='Unemployment to Job Opening Comparison'>
+      <viewpoints>
+        <viewpoint name='Job Openings over Years'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Unemployment over Years'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{D1DB4639-BF96-473E-A478-0648359720D3}' />
+    </window>
+    <window class='dashboard' name='State Area Unemployment'>
+      <viewpoints>
+        <viewpoint name='Geographic Distribution of Unemployment'>
+          <current-page>
+            <multibucket>
+              <bucket>2020</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Unemployment by State Clean Channels'>
+          <current-page>
+            <multibucket>
+              <bucket>2020</bucket>
+            </multibucket>
+          </current-page>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{02FF08EF-C17C-4516-8C1A-982923028DDE}' />
+    </window>
+    <window class='dashboard' name='State Unemployment'>
+      <viewpoints>
+        <viewpoint name='Geographic Distribution of Unemployment Percent Change'>
+          <current-page>
+            <multibucket>
+              <bucket>2020</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Percent Difference By State'>
+          <current-page>
+            <multibucket>
+              <bucket>2020</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{E7334A75-1BE4-460A-8E01-F3F8FC67D503}' />
     </window>
   </windows>
 </workbook>
