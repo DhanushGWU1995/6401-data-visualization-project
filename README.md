@@ -15,14 +15,10 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 ### US Unemployment Rate - Kaggle Dataset
 - [Unemployment in USA ](https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state) — US labor market and economic data
 
-### Indeed USA Job Postings Series
-- [Software Development](https://data.indeed.com/#/postings)
-
-
 ### FRED Job posting US : U.S. Bureau of Labor Statistics via FRED
 
-- https://fred.stlouisfed.org/series/JTU5100JOL
-- https://fred.stlouisfed.org/series/JTS540099JOL
-- https://fred.stlouisfed.org/series/JTU5200JOL#
-- https://fred.stlouisfed.org/series/JTS3000JOL
-- https://fred.stlouisfed.org/series/JTSJOL
+- [Information Technology Job Postings](https://fred.stlouisfed.org/series/JTU5100JOL)
+- [Professional & Business Services Job Postings](https://fred.stlouisfed.org/series/JTS540099JOL)
+- [Finance & Insurance Job Postings](https://fred.stlouisfed.org/series/JTU5200JOL#)
+- [Non Farming Job Postings](https://fred.stlouisfed.org/series/JTSJOL)
+
