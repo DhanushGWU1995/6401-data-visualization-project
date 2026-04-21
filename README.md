@@ -22,3 +22,5 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 - [Finance & Insurance Job Postings](https://fred.stlouisfed.org/series/JTU5200JOL#)
 - [Non Farming Job Postings](https://fred.stlouisfed.org/series/JTSJOL)
 
+### US State Population Estimate : FRED
+- [https://fred.stlouisfed.org/series/CAPOP]
