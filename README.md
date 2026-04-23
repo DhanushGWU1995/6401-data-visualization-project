@@ -25,9 +25,16 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 ### US State Population Estimate : FRED
 - [https://fred.stlouisfed.org/series/CAPOP] - 1999-01-01 to 2025-01-01 Resident Population by State (Thousands of Persons).csv
 
+## Project 1 Analysis
+- Unemployment vs US Job Markets
+- Data Cleanup File (Tableau Prep): Dataset_Cleanin_Final.tfl
+- Final Cleaned Dataset file : Unemp_vs_job_usa_final.csv
+- Visualization File (Tableau File): Unemployment_Vs_Job_US_Final.twb
+
 ## Final Project Analysis
 
 - Job Market vs US Population
 - Data Cleanup File (Tableau Prep): Dataset_Cleanin_Final.tfl
+- Final Cleaned Dataset file : Unemp_vs_job_pop_usa_final.csv
 - Final Visualization File (Tableau File): P2_Job_Index_Vs_Population.twb
  
