@@ -29,6 +29,7 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 ### US State Population Estimate : FRED
 - [Resident Population by State (CAPOP)](https://fred.stlouisfed.org/series/CAPOP)
+	- Note: On FRED, use **View Map** to access and download the dataset.
 	- Local file (CSV): `1999-01-01 to 2025-01-01 Resident Population by State (Thousands of Persons).csv`
 
 ## Project 1 Analysis
