@@ -13,28 +13,38 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 ## Data Sources
 
 ### US Unemployment Rate - Kaggle Dataset
-- [Unemployment in USA ](https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state) - Unemployment in America Per US State.csv
+- [Unemployment in USA](https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state)
+	- Local file (CSV): `Unemployment in America Per US State.csv`
 
 ### FRED Job posting US : U.S. Bureau of Labor Statistics via FRED
 
-- [Information Technology Job Postings](https://fred.stlouisfed.org/series/JTU5100JOL) - JTU5100JOL_Information_Technology.csv
-- [Professional & Business Services Job Postings](https://fred.stlouisfed.org/series/JTS540099JOL) - JTS540099JOL_Professional_Business_Services.csv
-- [Finance & Insurance Job Postings](https://fred.stlouisfed.org/series/JTU5200JOL#) - JTU5200JOL_Finance_Insurance.csv
-- [Non Farming Job Postings](https://fred.stlouisfed.org/series/JTSJOL) - JTSJOL_Non_Farming.csv
+- [Information Technology Job Postings](https://fred.stlouisfed.org/series/JTU5100JOL)
+	- Local file (CSV): `JTU5100JOL_Information_Technology.csv`
+- [Professional & Business Services Job Postings](https://fred.stlouisfed.org/series/JTS540099JOL)
+	- Local file (CSV): `JTS540099JOL_Professional_Business_Services.csv`
+- [Finance & Insurance Job Postings](https://fred.stlouisfed.org/series/JTU5200JOL)
+	- Local file (CSV): `JTU5200JOL_Finance_Insurance.csv`
+- [Non Farming Job Postings](https://fred.stlouisfed.org/series/JTSJOL)
+	- Local file (CSV): `JTSJOL_Non_Farming.csv`
 
 ### US State Population Estimate : FRED
-- [https://fred.stlouisfed.org/series/CAPOP] - 1999-01-01 to 2025-01-01 Resident Population by State (Thousands of Persons).csv
+- [Resident Population by State (CAPOP)](https://fred.stlouisfed.org/series/CAPOP)
+	- Local file (CSV): `1999-01-01 to 2025-01-01 Resident Population by State (Thousands of Persons).csv`
 
 ## Project 1 Analysis
-- Unemployment vs US Job Markets
-- Data Cleanup File (Tableau Prep): Dataset_Cleanin_Final.tfl
-- Final Cleaned Dataset file : Unemp_vs_job_usa_final.csv
-- Visualization File (Tableau File): Unemployment_Vs_Job_US_Final.twb
+- Topic: Unemployment vs US Job Markets
+- Data prep (Tableau Prep): `Dataset_Cleaning_Final.tfl`
+- Final cleaned dataset (CSV): `Unemp_vs_job_usa_final.csv`
+- Visualization (Tableau Workbook): `Unemployment_Vs_Job_US_Final.twb`
 
 ## Final Project Analysis
 
-- Job Market vs US Population
-- Data Cleanup File (Tableau Prep): Dataset_Cleanin_Final.tfl
-- Final Cleaned Dataset file : Unemp_vs_job_pop_usa_final.csv
-- Final Visualization File (Tableau File): P2_Job_Index_Vs_Population.twb
+- Topic: Job Market vs US Population
+- Data prep (Tableau Prep): `Dataset_Cleaning_Final.tfl`
+- Final cleaned dataset (CSV): `Unemp_vs_job_pop_usa_final.csv`
+- Visualization (Tableau Workbook): `P2_Job_Index_Vs_Population.twb`
+
+## Final Paper / Report
+
+- Final paper (PDF): `Project 2 Report.pdf`
  
