@@ -14,6 +14,7 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 ### US Unemployment Rate - Kaggle Dataset
 - [Unemployment in USA ](https://www.kaggle.com/datasets/justin2028/unemployment-in-america-per-us-state) — US labor market and economic data
+- 
 
 ### FRED Job posting US : U.S. Bureau of Labor Statistics via FRED
 
@@ -24,3 +25,10 @@ Team Members: Dhanush Mathivanan, Josh Schechter, Halima Al Balushi
 
 ### US State Population Estimate : FRED
 - [https://fred.stlouisfed.org/series/CAPOP]
+
+## Final Project Analysis
+
+- Job Market vs US Population
+- Data Cleanup File (Tableau Prep): Dataset_Cleanin_Final.tfl
+- Final Visualization File (Tableau File): P2_Job_Index_Vs_Population.twb
+ 
